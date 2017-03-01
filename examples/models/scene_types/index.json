@@ -1,4 +1,25 @@
 {
   "id": "58745c9fbd17c82dd4ff7c9c",
-  "name": "Scene Types"
+  "name": "Scene Types",
+  "description": "Classify images into Indoor VS Outdoor scenes",
+  "version": 0.1,
+  "engines": {
+    "tensorflow": ">=0.11"
+  },
+  "nodes": {
+    "softmaxOutput": {
+      "type": "tensor",
+      "id": "retrained_layer:0"
+    },
+    "convolutionalRepresentation": {
+      "type": "tensor",
+      "id": "pool_3/_reshape:0"
+    }
+  },
+  "author": {
+    "name": "Dominiek Ter Heide",
+    "email": "info@dominiek.com"
+  },
+  "labelsDefinitionFile": "labels.json",
+  "stateDir": "state"
 }

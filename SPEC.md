@@ -1,5 +1,5 @@
 
-_Work in progress. Feedback on this very welcome_
+_Work in progress. [Feedback](https://github.com/dominiek/nnpack/issues) on this very welcome_
 
 # NNPack Specification 1.0-DRAFT
 
