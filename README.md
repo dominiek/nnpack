@@ -75,9 +75,8 @@ nnpack push dominiek/scene_type_vision
 
 ## Todo
 
-* Update unit tests and examples to conform to latest Spec Draft
-* Create simple website skeleton
-* Create a Spec roadmap
-* Add utility functions for creating Models and Scaffolds
 * Encapsulate utility functions in PIP module
+* Add utility functions for creating Models and Scaffolds
+* Create a Spec roadmap
+* Create simple website skeleton
 * Create NNPack Registry beta

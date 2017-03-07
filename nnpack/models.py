@@ -13,20 +13,20 @@ class InvalidModelError(Exception):
 def validate_model(path):
     if not os.path.isdir(path):
         raise InvalidModelError('Invalid Model, should be a directory: {}'.format(path))
-    if not os.path.isdir(path + '/state'):
-        raise InvalidModelError('Invalid Model, expected state directory: {}'.format(path + '/state'))
-    if not os.path.isfile(path + '/index.json'):
-        raise InvalidModelError('Invalid Model, expected index.json')
+    #if not os.path.isdir(path + '/state'):
+    #    raise InvalidModelError('Invalid Model, expected state directory: {}'.format(path + '/state'))
+    if not os.path.isfile(path + '/nnpackage.json'):
+        raise InvalidModelError('Invalid Model, expected nnpackage.json')
     try:
-        meta = load_meta(path)
+        meta = load_meta(path, '/nnpackage.json')
     except Exception as e:
         raise InvalidModelError('Could not load Model meta data: {}'.format(str(e)))
     if not meta.has_key('id'):
-        raise InvalidModelError('Invalid Model meta data, expected field `id` in index.json')
+        raise InvalidModelError('Invalid Model meta data, expected field `id` in nnpackage.json')
     if not meta.has_key('name'):
-        raise InvalidModelError('Invalid Model meta data, expected field `name` in index.json')
-    if not os.path.isfile(path + '/labels.jsons'):
-        raise InvalidModelError('Invalid Model, expected labels.jsons')
+        raise InvalidModelError('Invalid Model meta data, expected field `name` in nnpackage.json')
+    if not os.path.isfile(path + '/labels.json'):
+        raise InvalidModelError('Invalid Model, expected labels.json')
     try:
         labels = load_labels(path)
     except Exception as e:

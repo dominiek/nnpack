@@ -13,14 +13,13 @@ logger_handler.setFormatter(formatter)
 logger.addHandler(logger_handler)
 
 
-def load_meta(path):
-    with open(path + '/index.json', 'r') as f:
+def load_meta(path, filename):
+    with open(path + filename, 'r') as f:
         return json.load(f)
 
 def load_labels(path):
-    f = open(path + '/labels.jsons')
+    labels_meta = load_meta(path, '/labels.json')
     index = {}
-    for line in f:
-        label = json.loads(line)
+    for label in labels_meta['labels']:
         index[label['id']] = label
     return index
