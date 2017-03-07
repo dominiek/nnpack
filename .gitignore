@@ -1,3 +1,7 @@
 *.pyc
 test/tmp
 *.DS_Store
+build
+dist
+nnpack.egg-info/
+
